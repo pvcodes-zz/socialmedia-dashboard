@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.headings {
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+
+.countUp {
+  color: green;
+}
+
+.countDown {
+  color: #b71c1c;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  background: hsl(230, 17%, 14%);
+  transition: background 0.6s linear;
+
+  &::before {
+    content: "";
+    background: hsl(232, 19%, 15%);
+    position: absolute;
+    height: 25%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    z-index: -1;
+    transition: background 0.6s linear;
+  }
+}
+
+.whiteBody {
+  &::before {
+    background-color: hsl(225, 100%, 98%);
+  }
+}
+
+main {
+  margin: 1rem auto;
+  color: white;
+  transition: color 0.6s linear;
+}
+
+#socialDashboard {
+  padding: 1rem;
+
+  #toggleDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    cursor: pointer;
+
+    #toggleKey {
+      background: hsl(210, 78%, 56%);
+      height: 1.5rem;
+      margin-left: 1rem;
+      width: 3rem;
+      border: 1px solid white;
+      border-radius: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0.8rem 0.2rem;
+
+      #toggleCircle {
+        width: 1rem;
+        height: 1rem;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+      }
+    }
+  }
+
+  #dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .dashboardCards {
+      text-align: center;
+      background: hsl(228, 28%, 20%);
+      width: 100%;
+      margin: 1rem 0.5rem;
+      border-radius: 5px;
+      border-top: 3px solid transparent;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: background 0.6s linear;
+
+      P {
+        padding: 0.5rem;
+      }
+
+      p:first-child {
+        color: hsl(228, 34%, 66%);
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          padding-right: 0.5rem;
+        }
+      }
+
+      p:nth-child(2) {
+        font-weight: bold;
+        font-size: 3rem;
+        padding-bottom: 0;
+      }
+
+      p:nth-child(3) {
+        text-transform: uppercase;
+        padding-top: 0;
+        letter-spacing: 4px;
+        color: hsl(228, 34%, 66%);
+        font-size: 0.9rem;
+      }
+
+      p:last-child {
+        font-weight: bold;
+        font-size: 0.8rem;
+
+        img {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+
+    #fb {
+      border-top-color: hsl(195, 100%, 50%);
+    }
+
+    #twitter {
+      border-top-color: hsl(203, 89%, 53%);
+    }
+
+    #insta {
+      border-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+      border-image-slice: 1;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      border-radius: 5px;
+    }
+
+    #yt {
+      border-top-color: hsl(348, 97%, 39%);
+    }
+  }
+}
+
+#overviewDashboard {
+  font-size: 0.875rem;
+  padding: 1rem;
+  margin: 0 auto;
+
+  #overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overviewCards {
+    background: hsl(228, 28%, 20%);
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.6s linear;
+
+    p {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    P:first-child {
+      color: hsl(228, 34%, 66%);
+      font-weight: bold;
+    }
+
+    p:nth-child(3) {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    p:last-child {
+      font-weight: bold;
+      font-size: 0.8rem;
+
+      img {
+        padding-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+// =======================================================================
+// =======================================================================
+// =======================================================================
+// // Light Mode Styling// //
+// =======================================================================
+// =======================================================================
+// =======================================================================
+
+.whiteColor {
+  color: black;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    width: 76%;
+
+    #socialDashboard {
+      #toggleDiv {
+        justify-content: flex-end;
+      }
+
+      #dashboard {
+        flex-direction: row;
+      }
+    }
+
+    #overviewDashboard {
+      #overview {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .overviewCards {
+          width: 17rem;
+        }
+      }
+    }
+  }
+}
